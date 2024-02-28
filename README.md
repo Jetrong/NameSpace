@@ -8,6 +8,7 @@
 Задание
 
 Запустим Bash в новом пространстве имен командой (так как команда требует привилегии суперпользователя, то выполняем через sudo):
+sudo unshare -pf -n --mount-proc bash
 ![image](https://github.com/Jetrong/NameSpace/assets/136317824/53a79df6-beb3-40ee-a813-f023ab21aae0)
 
 
