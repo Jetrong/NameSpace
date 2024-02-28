@@ -1,8 +1,6 @@
 ﻿# Контейнеризация (семинары)
 
 
-![picture for containerization](https://github.com/Terekhov-A-S/Containerization-Seminar_1/blob/main/containerization.jpg)
-
 ## Урок 1. Механизмы пространства имен
 
 ### **Информация о проекте**
@@ -20,7 +18,7 @@
 ```
 sudo unshare -pf -n --mount-proc bash
 ```
-![sudo unshare -pf -n --mount-proc bash]
+
 ![image](https://github.com/Jetrong/NameSpace/assets/136317824/53a79df6-beb3-40ee-a813-f023ab21aae0)
 
 
@@ -29,7 +27,7 @@ sudo unshare -pf -n --mount-proc bash
 ```
 ps -afx
 ```
-![ps -afx]
+
 ![image](https://github.com/Jetrong/NameSpace/assets/136317824/50a3413c-74f6-4b52-ba73-139ffebb67b6)
 
 
@@ -47,14 +45,14 @@ ps -afx
 ```
 ping ya.ru
 ```
- ![ps -afx]
+
 ![image](https://github.com/Jetrong/NameSpace/assets/136317824/df093e7e-2183-4d85-a2c0-927cd7ca4683)
 
 Наблюдаем, что пинг до указанного сайта не может быть осуществлен, так как сеть в этом пронстранстве имен имеется только локальная, т.е. localhost.
 
 
 А теперь, ту же команду запустим из параллельного терминала (котоый не изолирован).
-![ps -afx]
+
 ![image](https://github.com/Jetrong/NameSpace/assets/136317824/7927022a-a1bf-41b8-aa3a-3b03dbac7144)
 
 Видим, что пакеты до сайта уходят нормально и ответ от сервера принимается.
@@ -64,7 +62,7 @@ ping ya.ru
 ```
 hostname
 ```
-![ps -afx]
+
 ![image](https://github.com/Jetrong/NameSpace/assets/136317824/afac0238-76c9-4553-b521-94eeb8105b15)
 
 Как мы можем заметить - хоcт и там и там одинаков. А теперь, в изолированном терминале выполняем команду:
@@ -79,7 +77,7 @@ sudo unshare -u bash
 hostname geekbrains
 ```
 Эта команда никак не затронула хост основной системы. Можем проверить это, выполнив hostname в первом терминале и увидев, что имя хоста там не изменилось.
-![ps -afx]
+
 ![image](https://github.com/Jetrong/NameSpace/assets/136317824/7c9d1a6d-461b-4bef-afaf-c563628b7c45)
 
 
